@@ -1,32 +1,32 @@
-// const tinderUser = new Object()
-const tinderUser = {}
+// const tinderUser = new Object() --- singleton object
+const tinderUser = {} // object literal
 
 tinderUser.id = "123abc"
 tinderUser.name = "Sammy"
 tinderUser.isLoggedIn = false
 
-// console.log(tinderUser);
+console.log(tinderUser);
 
 const regularUser = {
     email: "some@gmail.com",
     fullname: {
-        userfullname: {
+        userfullname: { // nested object
             firstname: "hitesh",
             lastname: "choudhary"
         }
     }
 }
 
-// console.log(regularUser.fullname.userfullname.firstname);
+console.log(regularUser.fullname.userfullname.firstname);
 
-const obj1 = {1: "a", 2: "b"}
-const obj2 = {3: "a", 4: "b"}
-const obj4 = {5: "a", 6: "b"}
+const obj1 = { 1: "a", 2: "b" }
+const obj2 = { 3: "a", 4: "b" }
+const obj4 = { 5: "a", 6: "b" }
 
-// const obj3 = { obj1, obj2 }
-// const obj3 = Object.assign({}, obj1, obj2, obj4)
+// const obj3 = { obj1, obj2 } -- wrong way
+// const obj3 = Object.assign({}, obj1, obj2, obj4) -- correct way
 
-const obj3 = {...obj1, ...obj2}
+const obj3 = { ...obj1, ...obj2 }
 // console.log(obj3);
 
 
@@ -63,20 +63,20 @@ const course = {
 
 // course.courseInstructor
 
-const {courseInstructor: instructor} = course
+const { courseInstructor: instructor } = course // destructuring
 
 // console.log(courseInstructor);
 console.log(instructor);
 
-// {
+// { -- json object
 //     "name": "hitesh",
 //     "coursename": "js in hindi",
 //     "price": "free"
 // }
 
-[
+[ // json array
     {},
-    {},
+    {}, // json object
     {}
 ]
 
