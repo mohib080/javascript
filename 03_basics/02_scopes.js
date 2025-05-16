@@ -3,27 +3,28 @@ let a = 300
 if (true) {
     let a = 10
     const b = 20
-    // console.log("INNER: ", a);
-    
+    var c = 30 // var is function scoped
+    // console.log("INNER: ", a); -- output: 10
+
 }
 
 
 
-// console.log(a);
+// console.log(a); -- output: 300
 // console.log(b);
-// console.log(c);
+// console.log(c); -- output: 30
 
 
-function one(){
+function one() {
     const username = "hitesh"
 
-    function two(){
+    function two() {
         const website = "youtube"
-        console.log(username);
+        console.log(username); // hites
     }
-    // console.log(website);
+    // console.log(website); -- output: ReferenceError: website is not defined
 
-     two()
+    two()
 
 }
 
@@ -33,12 +34,12 @@ if (true) {
     const username = "hitesh"
     if (username === "hitesh") {
         const website = " youtube"
-        // console.log(username + website);
+        // console.log(username + website); -- output: hitesh youtube
     }
-    // console.log(website);
+    // console.log(website); -- output: ReferenceError: website is not defined
 }
 
-// console.log(username);
+// console.log(username); -- output: ReferenceError: username is not defined
 
 
 // ++++++++++++++++++ interesting ++++++++++++++++++
@@ -46,13 +47,13 @@ if (true) {
 
 console.log(addone(5))
 
-function addone(num){
+function addone(num) {
     return num + 1
 }
 
 
 
-addTwo(5)
-const addTwo = function(num){
+addTwo(5) // ReferenceError: Cannot access 'addTwo' before initialization -- hoisting
+const addTwo = function (num) {
     return num + 2
 }
